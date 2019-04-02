@@ -18,7 +18,7 @@ The main goal was to enable mapping with ROVIOLI.
      
  ## Installation
  
- * Set up a catkin workspace. If you do not know how to do that follow [the instructions of maplab](https://github.com/ethz-asl/maplab/wiki/Installation-Ubuntu#create-a-catkin-workspace) on how to do so.
+ * Set up a catkin workspace. If you do not know how to do that follow [the instructions of maplab](https://github.com/ethz-asl/maplab/wiki/Installation-Ubuntu#create-a-catkin-workspace).
  * Follow the instructions in these chapters in the intel wiki to prepare your system and dependencies for librealsense.
     * https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md#ubuntu-build-dependencies
     * https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md#prerequisites
