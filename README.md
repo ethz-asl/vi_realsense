@@ -2,7 +2,8 @@
 
 This repo contains submodules with specific version of [librealsense](https://github.com/IntelRealSense/librealsense) 
 and a fixed (mostly IMU related) and improved version of [realsense](https://github.com/intel-ros/realsense).
-The main goal was to enable mapping with ROVIOLI. ROVIOLI has been tested with a D435i on Ubuntu 18.04 melodic. This driver has also been tested with D435 and D415 (but obviously they do not allow for VI-mapping).
+The main goal was to enable mapping with ROVIOLI. This has been tested with a D435i on Ubuntu 18.04 melodic.
+This driver also works for D435 and D415 (but obviously they do not work with ROVIOLI).
 
 ### librealsense
  * No changes, Version 2.19.1
