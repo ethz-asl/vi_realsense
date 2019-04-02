@@ -10,7 +10,7 @@ This driver also works for D435 and D415 (but obviously they do not work with RO
 
 ### realsense
  * Based on Version 2.2.1
- * Implement an actually meaningful unite_imu logic
+ * Adds an actually meaningful unite_imu logic, which combines the individual gyro/accel measurements at different frequencies into one IMU message, by interpolating the faster signal onto the slower one.
  * Extends the ROS node interface to allow configuration of:
      * Emitter ON/OFF
      * Format of the image streams (MONO8, MONO16, BGR8, RGB8, etc.)
