@@ -1,4 +1,4 @@
-# realsense_d435i
+# realsense_D435i
 
 This repo contains submodules with specific version of [librealsense](https://github.com/IntelRealSense/librealsense) 
 and a fixed (mostly IMU related) and improved version of [realsense](https://github.com/intel-ros/realsense).
