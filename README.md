@@ -1,20 +1,22 @@
 # realsense_D435i
 
 This repo contains submodules with specific version of [librealsense](https://github.com/IntelRealSense/librealsense) 
-and a fixed (mostly IMU related) and improved version of [realsense](https://github.com/intel-ros/realsense).
+and a fixed (mostly IMU related) and modified version of [realsense](https://github.com/intel-ros/realsense).
 The main goal was to enable mapping with ROVIOLI. This has been tested with a D435i on Ubuntu 18.04 melodic.
-This driver also works for D435 and D415 (but obviously they do not work with ROVIOLI).
+
+
+maplab should now work with the `rs_maplab.launch` file.
 
 ### librealsense
  * No changes, Version 2.19.1
 
 ### realsense
  * Based on Version 2.2.1
- * Adds an actually meaningful unite_imu logic, which combines the individual gyro/accel measurements at different frequencies into one IMU message, by interpolating the faster signal onto the slower one.
+ * Replaces the unite_imu logic, which combines the individual gyro/accel measurements at different frequencies into one IMU message, by interpolating the faster signal onto the slower one.
  * Extends the ROS node interface to allow configuration of:
      * Emitter ON/OFF
      * Format of the image streams (MONO8, MONO16, BGR8, RGB8, etc.)
-     * Publishing CameraInfo ON/OFF. Disabling allows certain high-resolution configurations for the streams that do not have intrinsics store on the sensor. These configurations would otherwise just crash the driver.
+     * Publishing CameraInfo ON/OFF. Disabling allows certain high-resolution configurations for the streams that do not have intrinsics stored on the sensor. These configurations would otherwise just crash the driver.
      
      
  ## Installation
