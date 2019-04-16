@@ -5,7 +5,20 @@ and a fixed (mostly IMU related) and modified version of [realsense](https://git
 The main goal was to enable visual inertial mapping (e.g. with maplab).
 This has been tested with a D435i and T265 on Ubuntu 18.04 melodic.
 
-maplab should now work with the `rs_maplab.launch` file.
+# T265 (WIP)
+
+Use the `devel/T265` branch, the built-in pose estimation should work with the `rs_t265.launch` file. For maplab you can use the same launch file, however, we have encountered difficulties running ROVIOLI with the fisheye cameras. The best model that is supported by ROVIO is the pinhole-equi model, but the double-sphere model might be a better choice. Therefore the sensor is not working well with maplab out of the box and needs some more work.
+
+### librealsense
+ * No changes, `development` branch
+
+### realsense
+ * Based on Version 2.2.3
+ * Remove accelerometer factor that is used to scale the accelerometer based on the first measurement.
+
+# D435i
+
+Use the `master` branch, maplab should now work with the `rs_maplab.launch` file.
 
 ### librealsense
  * No changes, Version 2.19.1
@@ -17,6 +30,7 @@ maplab should now work with the `rs_maplab.launch` file.
      * Emitter ON/OFF
      * Format of the image streams (MONO8, MONO16, BGR8, RGB8, etc.)
      * Publishing CameraInfo ON/OFF. Disabling allows certain high-resolution configurations for the streams that do not have intrinsics stored on the sensor. These configurations would otherwise just crash the driver.
+     * 
      
      
  ## Installation
