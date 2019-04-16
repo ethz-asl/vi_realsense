@@ -30,7 +30,7 @@ Use the `master` branch, maplab should now work with the `rs_maplab.launch` file
      * Emitter ON/OFF
      * Format of the image streams (MONO8, MONO16, BGR8, RGB8, etc.)
      * Publishing CameraInfo ON/OFF. Disabling allows certain high-resolution configurations for the streams that do not have intrinsics stored on the sensor. These configurations would otherwise just crash the driver.
-     * 
+     * Remove accelerometer factor that is used to scale the accelerometer based on the first measurement.
      
      
  ## Installation
