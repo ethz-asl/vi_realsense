@@ -10,7 +10,7 @@ This has been tested with a D435i and T265 on Ubuntu 18.04 melodic.
 Use the `devel/T265` branch, the built-in pose estimation should work with the `rs_t265.launch` file. For maplab you can use the same launch file, however, we have encountered difficulties running ROVIOLI with the fisheye cameras. The best model that is supported by ROVIO is the pinhole-equi model, but the double-sphere model might be a better choice. Therefore the sensor is not working well with maplab out of the box and needs some more work.
 
 ### librealsense (SDK)
- * No changes, `development` branch
+ * No changes, `development` branch (commit `3e91600bd41824316d670dad043d952e8dc259ef`)
 
 ### realsense (ROS Wrapper)
  * Based on Version 2.2.3
