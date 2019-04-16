@@ -1,9 +1,9 @@
-# realsense_D435i
+# RealSense for VI-Mapping
 
 This repo contains submodules with specific version of [librealsense](https://github.com/IntelRealSense/librealsense) 
 and a fixed (mostly IMU related) and modified version of [realsense](https://github.com/intel-ros/realsense).
-The main goal was to enable mapping with ROVIOLI. This has been tested with a D435i on Ubuntu 18.04 melodic.
-
+The main goal was to enable visual inertial mapping (e.g. with maplab).
+This has been tested with a D435i and T265 on Ubuntu 18.04 melodic.
 
 maplab should now work with the `rs_maplab.launch` file.
 
