@@ -51,7 +51,7 @@ Use the `master` branch, maplab should now work with the `rs_maplab.launch` file
     * Patch the kernel modules
     * Build librealsense2 SDK
     
-    The steps above are described in the librealsense [install instructions](https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md), make sure you follow the instructions for the version of librealsense you are trying to install (i.e. the one that is in this repo's submodule).
+    The steps above are described in the librealsense [install instructions](https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md), make sure you follow the instructions for the version of librealsense you are trying to install (i.e. the one that is in this repo's submodule). There is also the option to install the SDK and kernel modules using apt, please follow the install instructions linked above if you would like to try that.
     
     * Build ros driver: `catkin build realsense2_camera`, if there are some issues with this driver, checkout the [install instructions on the repo](https://github.com/IntelRealSense/realsense-ros)
  * You will probably need to reboot/logout to make sure the sensor is recognized correctly after the this installation.
