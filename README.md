@@ -46,19 +46,24 @@ Use the `master` branch, maplab should now work with the `rs_maplab.launch` file
  ## Installation
  
  * Set up a catkin workspace. If you do not know how to do that follow [the instructions of maplab](https://github.com/ethz-asl/maplab/wiki/Installation-Ubuntu#create-a-catkin-workspace).
- * Follow the instructions in these chapters in the intel wiki to prepare your system and dependencies for librealsense.
-    * https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md#ubuntu-build-dependencies
-    * https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md#prerequisites
-    NOTE: You can either build and install the SDK (and the patched modules) from source or using apt-get. The latter is the better choice if the version of librealsense you need is not some custom one.
-    * **Troubleshooting:**
-      * If the patching of the kernel fails because the videobuf2_core ore uvcvideo module cannot be unloaded, make sure your sensor is unplugged and then try this:
-        ```bash
-        sudo modprobe -r uvcvideo
-        sudo modprobe -r videobuf2_core
-        sudo modprobe -r videodev
-        ```
-      * If patching the kernel module fails (e.g. uvcvideo, or videodev) it might be caused by UEFI safe boot enabled on your system, which prevents these changes. Disable it in the BIOS menu and retry the installation
-         
- * Build librealsense: `catkin build librealsense2`
- * Build realsense: `catkin build realsense2_camera`
+ * The installation involves the following steps:
+    * First you need to install some prerequisites for the SDK and the kernel modules
+    * Patch the kernel modules
+    * Build librealsense2 SDK
+    
+    The steps above are described in the librealsense [install instructions](https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md), make sure you follow the instructions for the version of librealsense you are trying to install (i.e. the one that is in this repo's submodule).
+    
+    * Build ros driver: `catkin build realsense2_camera`
  * You will probably need to reboot/logout to make sure the sensor is recognized correctly after the this installation.
+ 
+ 
+## Troubleshooting
+* Sometimes your realsense will not be recognized as a USB3 device. This can happen if the USB cable is connected too slowly and the OS already decideds that this is a USB2 device, before all USB pins are in contact with the socket. It sounds like a joke, but plugging in the USB connectors with one fast motion is preventing this.
+* If the patching of the kernel fails because the videobuf2_core ore uvcvideo module cannot be unloaded, make sure your sensor is unplugged and then try this:
+```bash
+sudo modprobe -r uvcvideo
+sudo modprobe -r videobuf2_core
+sudo modprobe -r videodev
+```
+* If patching the kernel module fails (e.g. uvcvideo, or videodev) it might be caused by UEFI safe boot enabled on your system, which prevents these changes. Disable it in the BIOS menu and retry the installation
+ * When switching branches in this repository, the submodules might change both their subfolder name and the remote. The easiest solution is simply to remove and clone this repo again, switch to the branch you want and only then initialize and update the submodules. Alternatively, there is a script in the devel/T265_latest branch that might help with updating the submodules.
