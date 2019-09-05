@@ -49,13 +49,15 @@ Use the `master` branch, maplab should now work with the `rs_maplab.launch` file
  * Follow the instructions in these chapters in the intel wiki to prepare your system and dependencies for librealsense.
     * https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md#ubuntu-build-dependencies
     * https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md#prerequisites
-      * **Troubleshooting:**
-        If the patching of the kernel fails because the videobuf2_core ore uvcvideo module cannot be unloaded, make sure your sensor is unplugged and then try this:
+    NOTE: You can either build and install the SDK (and the patched modules) from source or using apt-get. The latter is the better choice if the version of librealsense you need is not some custom one.
+    * **Troubleshooting:**
+      * If the patching of the kernel fails because the videobuf2_core ore uvcvideo module cannot be unloaded, make sure your sensor is unplugged and then try this:
         ```bash
         sudo modprobe -r uvcvideo
         sudo modprobe -r videobuf2_core
         sudo modprobe -r videodev
         ```
+      * If patching the kernel module fails (e.g. uvcvideo, or videodev) it might be caused by UEFI safe boot enabled on your system, which prevents these changes. Disable it in the BIOS menu and retry the installation
          
  * Build librealsense: `catkin build librealsense2`
  * Build realsense: `catkin build realsense2_camera`
