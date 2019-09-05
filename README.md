@@ -53,7 +53,7 @@ Use the `master` branch, maplab should now work with the `rs_maplab.launch` file
     
     The steps above are described in the librealsense [install instructions](https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md), make sure you follow the instructions for the version of librealsense you are trying to install (i.e. the one that is in this repo's submodule).
     
-    * Build ros driver: `catkin build realsense2_camera`
+    * Build ros driver: `catkin build realsense2_camera`, if there are some issues with this driver, checkout the [install instructions on the repo](https://github.com/IntelRealSense/realsense-ros)
  * You will probably need to reboot/logout to make sure the sensor is recognized correctly after the this installation.
  
  
@@ -67,3 +67,19 @@ sudo modprobe -r videodev
 ```
 * If patching the kernel module fails (e.g. uvcvideo, or videodev) it might be caused by UEFI safe boot enabled on your system, which prevents these changes. Disable it in the BIOS menu and retry the installation
  * When switching branches in this repository, the submodules might change both their subfolder name and the remote. The easiest solution is simply to remove and clone this repo again, switch to the branch you want and only then initialize and update the submodules. Alternatively, there is a script in the devel/T265_latest branch that might help with updating the submodules.
+
+## Running the driver
+
+ - Source the workspace
+ 
+ - **T265**
+    ```
+    roslaunch realsense2_camera rs_t265.launch
+    ```
+      - **Note:** In order to get unified gyro/accel measurements, change the following line in the launch file:
+        ```diff
+        -  <arg name="unite_imu_method"      default=""/>
+        -  
+        +  <arg name="unite_imu_method"      default="linear_interpolation"/>
+        +
+        ```
