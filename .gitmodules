@@ -1,6 +1,6 @@
-[submodule "realsense"]
-	path = realsense
-	url = git@github.com:ethz-asl/realsense.git
+[submodule "realsense-ros"]
+	path = realsense-ros
+	url = git@github.com:IntelRealSense/realsense-ros.git
 [submodule "librealsense"]
 	path = librealsense
-	url = git@github.com:ethz-asl/librealsense.git
+	url = git@github.com:IntelRealSense/librealsense.git
