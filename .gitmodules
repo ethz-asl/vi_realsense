@@ -4,3 +4,6 @@
 [submodule "librealsense"]
 	path = librealsense
 	url = git@github.com:IntelRealSense/librealsense.git
+[submodule "ddynamic_reconfigure"]
+	path = ddynamic_reconfigure
+	url = git@github.com:pal-robotics/ddynamic_reconfigure.git
