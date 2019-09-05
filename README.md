@@ -5,7 +5,7 @@ and a fixed (mostly IMU related) and modified version of [realsense](https://git
 The main goal was to enable visual inertial mapping (e.g. with maplab).
 This has been tested with a D435i and T265 on Ubuntu 18.04 melodic.
 
-# T265 (newest releases 05.09.2019)
+# T265 (newest releases 05.09.2019, not tested for maplab yet)
 
 Use the `devel/T265_latest` branch, the built-in pose estimation should work with the `rs_t265.launch` file. For maplab you can use the same launch file, however, we have encountered difficulties running ROVIOLI with the fisheye cameras. The best model that is supported by ROVIO is the pinhole-equi model, but the double-sphere model might be a better choice. Therefore the sensor is not working well with maplab out of the box and needs some more work.
 
